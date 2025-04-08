@@ -25,7 +25,6 @@ import FavCards from "./components/FavCards";
 
 import AdminUsers from "./components/AdminUsers";
 
-import AdminStats from "./components/AdminStats";
 import CartTable from "./components/CartTable";
 import AdminProducts from "./components/AdminProducts";
 import AdminFavorites from "./components/AdminFavorites";
@@ -177,7 +176,6 @@ function App() {
             <Route path="/sandbox">
               <Route path="adminusers" element={<AdminUsers />} />
               <Route path="adminproducts" element={<AdminProducts />} />
-              <Route path="adminstats" element={<AdminStats />} />
               <Route path="adminfavorites" element={<AdminFavorites />} />
               <Route path="admincart" element={<AdminCart />} />
             </Route>

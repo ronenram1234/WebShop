@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { User } from "../interfaces/User";
-import { CardRecFull } from "../interfaces/Card";
 import { Logo } from "../interfaces/Logo";
 
 export interface GlobalPropsType {
@@ -10,8 +9,6 @@ export interface GlobalPropsType {
   setToken: React.Dispatch<React.SetStateAction<string>>;
   currentUser: User | null;
   setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
-  cardArray: CardRecFull[] | null;
-  setCardArray: React.Dispatch<React.SetStateAction<CardRecFull[] | null>>;
 
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
@@ -37,8 +34,6 @@ export const GlobalProps = createContext<GlobalPropsType>({
   setToken: () => {},
   currentUser: null,
   setCurrentUser: () => {},
-  cardArray: null,
-  setCardArray: () => {},
   isDarkMode: false,
   setIsDarkMode: () => {},
   searchString: "",
