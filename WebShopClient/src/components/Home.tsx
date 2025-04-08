@@ -42,11 +42,10 @@ const Home: FunctionComponent = () => {
         <h2 className="impact-title">4.95 Million KG of CO2 Reduced</h2>
         <div className="impact-stats">
           <div className="impact-item">
-            <h3>Equivalent to 500+ Global Circuits</h3>
+            <h3>Equivalent to 500 Circuits</h3>
             <p>
               Comparable to driving a typical car for over 20 million kilometers
-              — enough distance to circle the planet <strong>500+ times</strong>
-              .
+              — enough distance to circle the planet <strong>500 times</strong>.
             </p>
           </div>
           <div className="impact-item">
