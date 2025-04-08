@@ -1,0 +1,568 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* HomeCarousel component */
+.block-home {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.custom-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.carousel-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.carousel-text-small {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #cccccc;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+  margin-top: 0.5rem;
+}
+
+/* Home component */
+/* Container */
+.home-container {
+  font-family: "Arial", sans-serif;
+}
+
+/* Sustainability Section */
+.sustainability-section {
+  display: flex;
+  background-color: #a3d49c; /* Green background */
+  padding: 3rem 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sustainability-text {
+  width: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.sustainability-content {
+  width: 40%;
+  text-align: left;
+}
+
+.sustainability-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.sustainability-label {
+  background-color: #1ca351; /* Same green background */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Impact Section */
+.impact-section {
+  background-color: #1d2f47; /* Dark blue background */
+  padding: 3rem 5%;
+  color: #fff;
+  text-align: center;
+}
+
+.impact-title {
+  font-size: 2rem;
+  color: #4da6ff; /* Light blue text */
+  margin-bottom: 2rem;
+}
+
+/* Stats Container */
+.impact-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.impact-item {
+  width: 30%;
+}
+
+.impact-item h3 {
+  font-size: 1.5rem;
+  color: #4da6ff;
+}
+
+.impact-item p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Footer Note */
+.impact-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* third section */
+
+.third-section {
+  display: flex;
+  background-color: #a3d49c; /* Same green background */
+  padding: 3rem 5%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Left Text Section */
+.third-content {
+  width: 50%;
+  text-align: left;
+  color: #1d2f47; /* Dark blue text for contrast */
+}
+
+.third-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1d2f47;
+}
+
+.third-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Right Icons Section */
+.third-icons {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Icon Items */
+.icon-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Font Awesome Icon Styling */
+.icon-style {
+  font-size: 2rem;
+  color: #1d2f47;
+  margin-top: 4px;
+}
+
+.icon-text h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #1d2f47;
+}
+
+.icon-text p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Spin and Pulse Animation Speeds */
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  animation: fa-spin 1.5s infinite steps(8);
+}
+
+/* Login component styles */
+.login-container {
+  padding: 1rem 0;
+}
+
+.auth-input {
+  margin-bottom: 1.5rem !important;
+}
+
+.auth-input .MuiOutlinedInput-root {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.auth-input .MuiOutlinedInput-root:hover {
+  background-color: #fff;
+}
+
+.auth-input .MuiOutlinedInput-root.Mui-focused {
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+}
+
+.auth-submit-btn {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  background-color: #2196f3;
+  border-color: #2196f3;
+  transition: all 0.3s ease;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background-color: #1976d2;
+  border-color: #1976d2;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-submit-btn:disabled {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+}
+
+.auth-link-btn {
+  color: #2196f3;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.auth-link-btn:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+/* Error states */
+.auth-input .Mui-error {
+  color: #f44336;
+}
+
+.auth-input .MuiFormHelperText-root.Mui-error {
+  color: #f44336;
+  margin-top: 4px;
+  font-size: 0.75rem;
+}
+
+/* Modal Login/Register styles */
+.auth-modal .modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-modal .modal-header {
+  padding: 2rem 2rem 1rem;
+}
+
+.auth-modal .modal-header .close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  color: #666;
+}
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.auth-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.auth-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.auth-modal .modal-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+@media (min-width: 992px) {
+  .auth-modal .modal-lg {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-modal .modal-header {
+    padding: 1.5rem 1.5rem 0.5rem;
+  }
+
+  .auth-modal .modal-body {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .auth-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Navbar styles */
+.company-header {
+  background-color: #0a0a32;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+}
+
+#store-logo {
+  max-height: 45px;
+  margin-right: 12px;
+}
+
+.company-name {
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 1.5px;
+  font-family: "Noto Sans Thai", sans-serif;
+  font-weight: 700;
+}
+
+.company-contact {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+nav.navbar {
+  margin-top: 0;
+  background-color: #003366;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff0000;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ff0000;
+}
+
+.navbar-nav .nav-link.store-active {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+/* Store Products Cards styles */
+.store-search-container {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.search-forms-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px;
+  background-color: #fff;
+}
+
+.search-input {
+  width: 150px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-input.description {
+  width: 200px;
+}
+
+.search-button {
+  background-color: #0052a3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.sku-input-container {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  background-color: #f8f9fa;
+}
+
+.sku-prefix {
+  color: #666;
+  margin-right: 2px;
+}
+
+.sku-input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Store Carousel styles */
+.store-carousel-container {
+  position: relative;
+  padding: 0 60px;
+}
+
+.carousel-nav-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-nav-button.prev {
+  left: -50px;
+}
+
+.carousel-nav-button.next {
+  right: -50px;
+}
+
+.store-carousel {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+.store-card {
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+}
+
+.store-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.store-card-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  padding: 0.625rem;
+  margin: 0 auto;
+}
+
+/* LazyImage styles */
+.lazy-image-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}

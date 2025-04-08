@@ -1,0 +1,16 @@
+{
+  "name": "stock-upload",
+  "version": "1.0.0",
+  "description": "Upload stock data to MongoDB",
+  "main": "uploadStock.js",
+  "scripts": {
+    "start": "node uploadStock.js",
+    "get-logos": "node getBrandLogos.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0",
+    "joi": "^17.12.0",
+    "xlsx": "^0.18.5",
+    "axios": "^1.6.7"
+  }
+}

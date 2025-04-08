@@ -1,0 +1,102 @@
+[{
+  "_id": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "name": {
+    "first": "David",
+    "middle": "",
+    "last": "Brown"
+  },
+  "phone": "0504444444",
+  "email": "david.brown@gmail.com",
+  "password": "$2b$10$U49.WJZej1n/Qs1OSJQb4.jIM8xsGvmU5YLA0CKalNrLKvzW38v.m",
+  "address": {
+    "state": "",
+    "country": "Israel",
+    "city": "Netanya",
+    "street": "Independence",
+    "houseNumber": 15,
+    "zip": 333
+  },
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2025-03-17T05:02:13.439Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "name": {
+    "first": "Alice",
+    "middle": "",
+    "last": "Johnson"
+  },
+  "phone": "0503333333",
+  "email": "alice.johnson@gmail.com",
+  "password": "$2b$10$S6bU64MRD3LJe3hf8nZ6TOVxXz7qHELHPZQrB6bt9KW0g0jwo43nq",
+  "address": {
+    "state": "",
+    "country": "Israel",
+    "city": "Eilat",
+    "street": "Ben Gurion",
+    "houseNumber": 7
+  },
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2025-03-17T05:02:13.057Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7acd53e8c91a1d4ead9a6"
+  },
+  "name": {
+    "first": "Emma",
+    "middle": "",
+    "last": "Davis"
+  },
+  "phone": "0505555555",
+  "email": "emma.davis@gmail.com",
+  "password": "$2b$10$Zh/INm297KDXbvUDmYMP4.x8.K.CKEooxx1OuvT72uVby/9tYdw1.",
+  "address": {
+    "state": "",
+    "country": "Israel",
+    "city": "Be'er Sheva",
+    "street": "King David",
+    "houseNumber": 30
+  },
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2025-03-17T05:02:13.808Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f1f075244a3506e027cce7"
+  },
+  "name": {
+    "first": "ronen",
+    "middle": "",
+    "last": "ram"
+  },
+  "phone": "0528762534",
+  "email": "r@g.com",
+  "password": "$2b$10$.6rWohHbJz2Nn9LRoEel6O/cq1gRz6Fv1ttrd3RJJxBWqlgoHMoMS",
+  "address": {
+    "state": "",
+    "country": "isreael",
+    "city": "holon",
+    "street": "vered",
+    "houseNumber": 27,
+    "zip": 83457
+  },
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2025-04-06T03:09:41.929Z"
+  },
+  "__v": 0
+}]
