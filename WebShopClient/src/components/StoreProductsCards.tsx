@@ -307,6 +307,7 @@ const StoreProductsCards: FunctionComponent<StoreProductsCardsProps> = () => {
         </form>
       </div>
       <div
+        className="store-products-container"
         style={{
           border: "2px solid black",
           borderRadius: "8px",

@@ -735,6 +735,158 @@ p {
   .impact-item {
     width: 100%;
   }
+
+  /* Hide store carousel and cards in mobile view */
+  .store-carousel-container {
+    display: none;
+    padding: 0;
+    background: none;
+  }
+
+  .store-carousel {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .store-card {
+    display: none;
+  }
+
+  /* Remove box styling in mobile view */
+  .store-products-container {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Admin tables responsive styles */
+  .admin-container,
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: block;
+  }
+
+  /* Make sure table takes full width and scrolls */
+  .table {
+    font-size: 0.52rem !important;
+    margin: 0;
+    width: 100%;
+    min-width: 800px;
+  }
+
+  .table td,
+  .table th {
+    padding: 0.2rem !important;
+    white-space: nowrap;
+    min-width: 50px !important;
+    max-width: none !important;
+  }
+
+  .table th {
+    font-size: 0.52rem !important;
+  }
+
+  .table td {
+    font-size: 0.48rem !important;
+  }
+
+  /* Description column in admin tables */
+  .table td:nth-child(4) {
+    min-width: 100px !important;
+    max-width: none !important;
+  }
+
+  /* Action buttons in admin tables */
+  .table .MuiButton-root {
+    padding: 0.12rem 0.24rem !important;
+    font-size: 0.48rem !important;
+  }
+
+  /* DataGrid specific styles for admin tables */
+  .MuiDataGrid-root {
+    font-size: 0.52rem !important;
+  }
+
+  .MuiDataGrid-cell {
+    padding: 0.2rem !important;
+    font-size: 0.48rem !important;
+    min-width: 64px !important;
+  }
+
+  .MuiDataGrid-columnHeader {
+    padding: 0.2rem !important;
+    font-size: 0.52rem !important;
+    min-width: 64px !important;
+  }
+
+  /* Adjust icon sizes in table */
+  .table .btn-link svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  /* Adjust button padding */
+  .table .btn {
+    padding: 0.12rem 0.24rem !important;
+    font-size: 0.48rem !important;
+  }
+
+  /* Ensure buttons in grid are visible */
+  .MuiButton-root {
+    padding: 1px 6px !important;
+    font-size: 0.52rem !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Ensure container allows scrolling */
+  .admin-container,
+  .container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Table styles */
+  .table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .table {
+    min-width: 800px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Fix for DataGrid toolbar */
+  .MuiDataGrid-toolbarContainer {
+    padding: 0.25rem !important;
+  }
+
+  /* Ensure horizontal scrolling works on touch devices */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* About Us Page Styles */
@@ -946,4 +1098,98 @@ p {
   .map-container {
     height: 300px;
   }
+}
+
+/* Admin tables and DataGrid styles */
+.admin-container,
+.container {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  padding: 0 !important;
+}
+
+/* DataGrid wrapper styles */
+.MuiDataGrid-root {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+.MuiDataGrid-main {
+  overflow-x: auto !important;
+  width: 100% !important;
+}
+
+.MuiDataGrid-virtualScroller {
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* ... existing mobile styles ... */
+
+  /* Mobile DataGrid styles */
+  .MuiDataGrid-root {
+    font-size: 0.52rem !important;
+  }
+
+  .MuiDataGrid-columnHeader {
+    padding: 0.25rem !important;
+    font-size: 0.65rem !important;
+    min-width: 80px !important;
+  }
+
+  .MuiDataGrid-cell {
+    padding: 0.25rem !important;
+    font-size: 0.65rem !important;
+    min-width: 80px !important;
+  }
+
+  .MuiDataGrid-virtualScroller {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Ensure container allows scrolling */
+  .admin-container,
+  .container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Table styles */
+  .table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .table {
+    min-width: 800px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Fix for DataGrid toolbar */
+  .MuiDataGrid-toolbarContainer {
+    padding: 0.25rem !important;
+  }
+
+  /* Ensure buttons in grid are visible */
+  .MuiButton-root {
+    padding: 2px 8px !important;
+    font-size: 0.65rem !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Ensure horizontal scrolling works on all touch devices */
+* {
+  -webkit-overflow-scrolling: touch;
 }
