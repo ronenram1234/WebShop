@@ -12,7 +12,7 @@ node_modules
 logos
 dist
 dist-ssr
-*.local
+*.local 
 
 # Editor directories and files
 .vscode/*
