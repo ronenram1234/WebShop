@@ -23,6 +23,7 @@ import About from "./components/About";
 import FavCards from "./components/FavCards";
 
 import AdminUsers from "./components/AdminUsers";
+import AdminCustomerRequests from "./components/AdminCustomerRequests";
 
 import CartTable from "./components/CartTable";
 import AdminProducts from "./components/AdminProducts";
@@ -174,6 +175,10 @@ function App() {
               <Route path="adminproducts" element={<AdminProducts />} />
               <Route path="adminfavorites" element={<AdminFavorites />} />
               <Route path="admincart" element={<AdminCart />} />
+              <Route
+                path="admincustomerrequests"
+                element={<AdminCustomerRequests />}
+              />
             </Route>
 
             <Route path="*" element={<PageNotFound />} />

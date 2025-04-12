@@ -114,7 +114,7 @@ const NavBar: FunctionComponent = () => {
                         All Products
                       </NavLink>
                     </li>
-{/* 
+                    {/* 
                     <li>
                       <NavLink
                         className="dropdown-item"
@@ -137,6 +137,14 @@ const NavBar: FunctionComponent = () => {
                         to="/sandbox/admincart"
                       >
                         All Cart Items
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/sandbox/admincustomerrequests"
+                      >
+                        Customer Requests
                       </NavLink>
                     </li>
                   </ul>
