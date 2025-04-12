@@ -1,14 +1,7 @@
 import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { Table, Container, Button, Modal, Form } from "react-bootstrap";
 import { Stock } from "../interfaces/Stock";
-import {
-  BsHeart,
-  BsHeartFill,
-  BsCart,
-  BsCartFill,
-  BsCheckCircle,
-  BsCheckCircleFill,
-} from "react-icons/bs";
+import { BsHeartFill, BsCartFill } from "react-icons/bs";
 import StockDetailsModal from "./StockDetailsModal";
 import StockDetailsTooltip from "./StockDetailsTooltip";
 import { GlobalProps } from "../context/GlobalContext";
@@ -19,7 +12,6 @@ import {
   getUserFavorites,
   requestQuota,
 } from "../services/stockServices";
-import { errorMsg, successMsg } from "../services/feedbackService";
 
 const CartTable: FunctionComponent = () => {
   const { currentUser, token } = useContext(GlobalProps);
@@ -275,7 +267,7 @@ const CartTable: FunctionComponent = () => {
                     {isFavorite ? (
                       <BsHeartFill size={20} />
                     ) : (
-                      <BsHeart size={20} />
+                      <BsHeartFill size={20} />
                     )}
                   </button>
                 </td>

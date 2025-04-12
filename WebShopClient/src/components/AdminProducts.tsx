@@ -51,6 +51,11 @@ interface GridStock extends Stock {
   id: string;
   createdAt?: string;
   updatedAt?: string;
+  Quantity: number;
+  Detail: string;
+  "Product Category": string;
+  "Part Number": string;
+  "Serial Number": string;
 }
 
 const AdminProducts: FunctionComponent<
@@ -248,19 +253,16 @@ const AdminProducts: FunctionComponent<
         Brand: product.Brand,
         Model: product.Model,
         SKU: product.SKU,
-        Quantity: product.Quantity,
+        Quantity: product.Quantity || 0,
         "Price (USD)": product["Price (USD)"],
         Condition: product.Condition,
         Description: product.Description,
-        Detail: product.Detail,
-        "Product Category": product["Product Category"],
-        "Part Number": product["Part Number"],
-        "Serial Number": product["Serial Number"],
+        Detail: product.Detail || "",
+        "Product Category": product["Product Category"] || "",
+        "Part Number": product["Part Number"] || "",
+        "Serial Number": product["Serial Number"] || "",
         Location: product.Location,
         Status: product.Status,
-        "Created At": product.createdAt
-          ? new Date(product.createdAt).toLocaleString()
-          : "N/A",
       }));
 
       // Create worksheet

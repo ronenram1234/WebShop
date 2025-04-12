@@ -1,8 +1,6 @@
 import { FunctionComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUsers,
-  faChartLine,
   faHandshake,
   faLeaf,
   faShieldAlt,

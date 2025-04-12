@@ -8,7 +8,7 @@ import {
   toggleStockCart,
   getUserCart,
 } from "../services/stockServices";
-import { BsHeart, BsHeartFill, BsCart, BsCartFill } from "react-icons/bs";
+import { BsHeartFill, BsCart, BsCartFill } from "react-icons/bs";
 
 // interface FavCardsProps {}
 

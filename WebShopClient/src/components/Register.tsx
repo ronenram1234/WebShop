@@ -4,10 +4,12 @@ import * as yup from "yup";
 import { UserReg } from "../interfaces/User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { createUser } from "../services/userServices";
-import { errorMsg, successMsg } from "../services/feedbackService";
+import { errorMsg } from "../services/feedbackService";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { createUser } from "../services/userServices";
+import { AxiosError } from "axios";
+
+// const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
 
 interface RegisterProps {
   setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
@@ -78,12 +80,13 @@ const Register: FunctionComponent<RegisterProps> = ({ setIsRegister }) => {
     }),
     onSubmit: async (values) => {
       try {
-        const res = await axios.post(`${API_URL}/users/register`, values);
+        const res = await createUser(values);
         if (res.status === 201) {
           navigate("/login");
         }
       } catch (err) {
-        errorMsg(err.response?.data || "Registration failed");
+        const error = err as AxiosError<{ message: string }>;
+        errorMsg(error.response?.data?.message || "Registration failed");
       }
     },
   });

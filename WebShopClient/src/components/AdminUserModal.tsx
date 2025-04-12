@@ -10,10 +10,6 @@ import {
   FormControlLabel,
   Switch,
   Button,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -23,7 +19,6 @@ interface AdminUserModalProps {
   onClose: () => void;
   user: UserAdmin | null;
   token: string;
-  currentUserId: string;
   onSuccess: () => void;
 }
 
@@ -32,11 +27,9 @@ const AdminUserModal: FunctionComponent<AdminUserModalProps> = ({
   onClose,
   user,
   token,
-  currentUserId,
   onSuccess,
 }): ReactElement => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const formik = useFormik({
     initialValues: {
@@ -156,16 +149,6 @@ const AdminUserModal: FunctionComponent<AdminUserModalProps> = ({
       });
     }
   }, [user]);
-
-  const handleDelete = async () => {
-    if (!user?.id) return;
-    try {
-      await deleteUser(user.id);
-      onClose();
-    } catch (err) {
-      setError(err.message || "Failed to delete user");
-    }
-  };
 
   if (!user) {
     return <></>;

@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { UserLoginFormValues, UserReg, User } from "../interfaces/User";
+import { UserLoginFormValues, UserReg } from "../interfaces/User";
 import { jwtDecode } from "jwt-decode";
 import { Jwt } from "../interfaces/Jwt";
 

@@ -11,7 +11,7 @@ import {
   getUserCart,
   getUserFavorites,
 } from "../services/stockServices";
-import { errorMsg, successMsg } from "../services/feedbackService";
+import { errorMsg } from "../services/feedbackService";
 
 interface StockTableProps {
   stocks: Stock[];

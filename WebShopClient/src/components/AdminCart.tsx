@@ -8,22 +8,13 @@ import {
 import { GlobalProps } from "../context/GlobalContext";
 import { Stock } from "../interfaces/Stock";
 import { errorMsg, successMsg } from "../services/feedbackService";
-import {
-  getAllCartItems,
-  getUserCart,
-  getUserFavorites,
-  requestQuota,
-  markQuotaHandled,
-} from "../services/stockServices";
-import ClipLoader from "react-spinners/ClipLoader";
-import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
-import Paper from "@mui/material/Paper";
+import { getAllCartItems, markQuotaHandled } from "../services/stockServices";
+import { GridColDef } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import RefreshIcon from "@mui/icons-material/Refresh";
-import DownloadIcon from "@mui/icons-material/Download";
 import * as XLSX from "xlsx";
 import { Tooltip } from "@mui/material";
-import { Container, Table } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { DataGrid } from "@mui/x-data-grid";
 
 interface AdminCartProps {}
 
@@ -47,22 +38,13 @@ interface CartWithUsers extends Stock {
 const AdminCart: FunctionComponent<AdminCartProps> = (): ReactElement => {
   const { token } = useContext(GlobalProps);
   const [cartItems, setCartItems] = useState<CartWithUsers[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
-  const [favorites, setFavorites] = useState<Set<string>>(new Set());
-  const [showModal, setShowModal] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [selectedStockId, setSelectedStockId] = useState<string | null>(null);
 
   const fetchCartItems = async (): Promise<void> => {
     if (!token) {
-      setError("No authentication token found");
       errorMsg("No authentication token found");
       return;
     }
 
-    setLoading(true);
-    setError("");
     try {
       const response = await getAllCartItems(token);
       if (response.data) {
@@ -77,19 +59,13 @@ const AdminCart: FunctionComponent<AdminCartProps> = (): ReactElement => {
           };
         });
         setCartItems(mappedCartItems);
-        setFavorites(
-          new Set(mappedCartItems.map((item: CartWithUsers) => item._id || ""))
-        );
       } else {
         throw new Error("No data received from server");
       }
     } catch (err: any) {
       const errorMessage = err.response?.data || err.message || "Unknown error";
       console.error("Error fetching cart items:", err);
-      setError(`Failed to fetch cart items - ${errorMessage}`);
       errorMsg(`Failed to fetch cart items - ${errorMessage}`);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -97,7 +73,7 @@ const AdminCart: FunctionComponent<AdminCartProps> = (): ReactElement => {
     if (token) {
       fetchCartItems();
     } else {
-      setError("No authentication token found");
+      errorMsg("No authentication token found");
     }
   }, [token]);
 
@@ -292,48 +268,53 @@ const AdminCart: FunctionComponent<AdminCartProps> = (): ReactElement => {
         </Tooltip>
       ),
     },
+    {
+      field: "actions",
+      headerName: "Actions",
+      width: 150,
+      sortable: false,
+      renderCell: (params) => {
+        const hasUnhandledQuota = params.row.inCartBy?.some(
+          (entry: { requestedQuota?: number; quotaHandled?: boolean }) =>
+            entry.requestedQuota && !entry.quotaHandled
+        );
+
+        return hasUnhandledQuota ? (
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            onClick={() => handleMarkHandled(params.row._id)}
+          >
+            Mark Handled
+          </Button>
+        ) : null;
+      },
+    },
   ];
 
   const handleExcelDownload = async (): Promise<void> => {
     try {
-      // Transform data for Excel
-      const excelData = cartItems.map((item) => ({
-        ID: item.id,
-        "Added By": item.inCartBy
-          ?.map((user) => `${user.name.first} ${user.name.last}`)
-          .join(", "),
-        "User Email": item.inCartBy?.map((user) => user.email).join(", "),
-        Brand: item.Brand,
-        Model: item.Model,
-        SKU: item.SKU,
-      }));
-
-      // Create worksheet
-      const ws = XLSX.utils.json_to_sheet(excelData);
-
-      // Create workbook
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, "Cart Items");
-
-      // Convert workbook to array buffer
-      const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-      const blob = new Blob([excelBuffer], {
-        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      });
-
-      // Create download link
-      const downloadUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = downloadUrl;
-      link.download = "cart_items_data.xlsx";
-      link.click();
-
-      // Cleanup
-      window.URL.revokeObjectURL(downloadUrl);
-      successMsg("Cart items data downloaded successfully");
+      const worksheet = XLSX.utils.json_to_sheet(
+        cartItems.map((item) => ({
+          Brand: item.Brand,
+          Model: item.Model,
+          SKU: item.SKU,
+          Description: item.Description,
+          "Price (USD)": item["Price (USD)"],
+          Condition: item.Condition,
+          Location: item.Location,
+          Status: item.Status,
+          "Users in Cart": item.inCartBy?.length || 0,
+        }))
+      );
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Cart Items");
+      XLSX.writeFile(workbook, "cart_items.xlsx");
+      successMsg("Excel file downloaded successfully");
     } catch (err) {
-      errorMsg("Failed to download cart items data");
-      console.error("Excel download error:", err);
+      console.error("Error downloading Excel:", err);
+      errorMsg("Failed to download Excel file");
     }
   };
 
@@ -368,73 +349,31 @@ const AdminCart: FunctionComponent<AdminCartProps> = (): ReactElement => {
 
   return (
     <Container className="mt-4">
-      <h2 className="mb-4">Admin Cart</h2>
-      <Table striped bordered hover responsive>
-        <thead>
-          <tr>
-            <th style={{ whiteSpace: "nowrap", width: "15%" }}>Brand</th>
-            <th style={{ whiteSpace: "nowrap", width: "15%" }}>Model</th>
-            <th style={{ whiteSpace: "nowrap", width: "15%" }}>SKU</th>
-            <th style={{ width: "35%" }}>Description</th>
-            <th style={{ width: "7.5%" }}>Favorite</th>
-            <th style={{ width: "7.5%" }}>Cart</th>
-            <th style={{ width: "15%" }}>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cartItems.map((stock) => {
-            const stockId = stock._id || "";
-            const isFavorite = favorites.has(stockId);
-
-            // Find any cart entry with a quota request for this stock
-            const quotaEntries =
-              stock.inCartBy?.filter((entry) => entry.requestedQuota) || [];
-
-            // Check if all quota requests for this item are handled
-            const allQuotasHandled =
-              quotaEntries.length > 0 &&
-              quotaEntries.every((entry) => Boolean(entry.quotaHandled));
-
-            return (
-              <tr
-                key={stockId}
-                className={
-                  (showModal && selectedStockId === stockId) ||
-                  (showTooltip && selectedStockId === stockId)
-                    ? "table-primary"
-                    : ""
-                }
-                style={{
-                  transition: "background-color 0.3s ease",
-                }}
-              >
-                <td>{stock.Brand}</td>
-                <td>{stock.Model}</td>
-                <td>{stock.SKU}</td>
-                <td>{stock.Description}</td>
-                <td>{isFavorite ? "Yes" : "No"}</td>
-                <td>{stock.inCartBy?.length || 0}</td>
-                <td>
-                  {quotaEntries.length > 0 && (
-                    <Button
-                      variant="contained"
-                      color={allQuotasHandled ? "inherit" : "success"}
-                      size="small"
-                      onClick={() => handleMarkHandled(stockId)}
-                      disabled={allQuotasHandled}
-                      title={
-                        allQuotasHandled ? "Already Handled" : "Mark as Handled"
-                      }
-                    >
-                      {allQuotasHandled ? "Handled" : "Mark as Handled"}
-                    </Button>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2>Admin Cart</h2>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleExcelDownload}
+          startIcon={<i className="fas fa-file-excel"></i>}
+        >
+          Download Excel
+        </Button>
+      </div>
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          rows={cartItems}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10, 20]}
+          checkboxSelection
+          disableRowSelectionOnClick
+        />
+      </div>
     </Container>
   );
 };

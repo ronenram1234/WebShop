@@ -9,6 +9,11 @@ export interface Stock {
   Condition: string;
   Location: string;
   Status: string;
+  "Product Category": string;
+  "Part Number": string;
+  "Serial Number": string;
+  Detail: string;
+  Quantity: number;
   createdAt?: string;
   isFavorite?: boolean;
   inCart?: boolean;

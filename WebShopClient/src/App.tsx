@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 
 import { User } from "./interfaces/User";
 import { Jwt } from "./interfaces/Jwt";
-import { CardRecFull } from "./interfaces/Card";
 
 import {
   getTokenLocalStorage,
@@ -51,7 +50,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(localToken);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [cardArray, setCardArray] = useState<CardRecFull[] | null>([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [searchString, setSearchString] = useState("");
   const [sort, setSort] = useState("");
@@ -66,8 +64,6 @@ function App() {
     setToken,
     currentUser,
     setCurrentUser,
-    cardArray,
-    setCardArray,
     isDarkMode,
     setIsDarkMode,
     searchString,

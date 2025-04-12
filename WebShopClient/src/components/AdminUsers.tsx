@@ -22,16 +22,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import DownloadIcon from "@mui/icons-material/Download";
 import EditIcon from "@mui/icons-material/Edit";
 import * as XLSX from "xlsx";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  TextField,
-  FormControlLabel,
-  Switch,
-  IconButton,
-} from "@mui/material";
+import { IconButton } from "@mui/material";
 import AdminUserModal from "./AdminUserModal";
 
 // Add TypeScript declarations for the File System Access API
@@ -58,181 +49,8 @@ interface FileSystemWritableFileStream {
 
 interface AdminUsersProps {}
 
-interface UpdateUserModalProps {
-  open: boolean;
-  onClose: () => void;
-  user: UserAdmin | null;
-  onUpdate: (updatedUser: Partial<UserAdmin>) => Promise<void>;
-  currentUserId: string;
-}
-
-const UpdateUserModal: FunctionComponent<UpdateUserModalProps> = ({
-  open,
-  onClose,
-  user,
-  onUpdate,
-  currentUserId,
-}) => {
-  const [formData, setFormData] = useState<Partial<UserAdmin>>({});
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (user) {
-      setFormData({
-        nameFirst: user.nameFirst,
-        nameMiddle: user.nameMiddle,
-        nameLast: user.nameLast,
-        phone: user.phone,
-        addressState: user.addressState,
-        addressCountry: user.addressCountry,
-        addressCity: user.addressCity,
-        addressStreet: user.addressStreet,
-        addressHouseNumber: user.addressHouseNumber,
-        addressZip: user.addressZip,
-        isAdmin: user.isAdmin,
-      });
-    }
-  }, [user]);
-
-  const handleSubmit = async () => {
-    if (!user) return;
-    setLoading(true);
-    try {
-      await onUpdate(formData);
-      onClose();
-    } catch (error) {
-      console.error("Error updating user:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (!user) return null;
-
-  return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-      <DialogTitle>Update User</DialogTitle>
-      <DialogContent>
-        <div className="d-flex flex-column gap-3 mt-3">
-          <TextField
-            label="First Name"
-            value={formData.nameFirst || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, nameFirst: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="Middle Name"
-            value={formData.nameMiddle || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, nameMiddle: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="Last Name"
-            value={formData.nameLast || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, nameLast: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="Phone"
-            value={formData.phone || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="Country"
-            value={formData.addressCountry || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, addressCountry: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="State"
-            value={formData.addressState || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, addressState: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="City"
-            value={formData.addressCity || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, addressCity: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="Street"
-            value={formData.addressStreet || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, addressStreet: e.target.value })
-            }
-            fullWidth
-          />
-          <TextField
-            label="House Number"
-            type="number"
-            value={formData.addressHouseNumber || ""}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                addressHouseNumber: parseInt(e.target.value),
-              })
-            }
-            fullWidth
-          />
-          <TextField
-            label="ZIP Code"
-            type="number"
-            value={formData.addressZip || ""}
-            onChange={(e) =>
-              setFormData({ ...formData, addressZip: parseInt(e.target.value) })
-            }
-            fullWidth
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={formData.isAdmin === "true"}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    isAdmin: e.target.checked ? "true" : "false",
-                  })
-                }
-                disabled={user.id === currentUserId}
-              />
-            }
-            label="Admin"
-          />
-        </div>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
-        <Button
-          onClick={handleSubmit}
-          variant="contained"
-          color="primary"
-          disabled={loading}
-        >
-          {loading ? "Updating..." : "Update"}
-        </Button>
-      </DialogActions>
-    </Dialog>
-  );
-};
-
 const AdminUsers: FunctionComponent<AdminUsersProps> = (): ReactElement => {
-  const { token, currentUser } = useContext(GlobalProps);
+  const { token } = useContext(GlobalProps);
   const [userAdmins, setUserAdmins] = useState<UserAdmin[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -667,8 +485,7 @@ const AdminUsers: FunctionComponent<AdminUsersProps> = (): ReactElement => {
           setSelectedUser(null);
         }}
         user={selectedUser}
-        token={token || ""}
-        currentUserId={currentUser?._id || ""}
+        token={token}
         onSuccess={fetchUsers}
       />
     </div>

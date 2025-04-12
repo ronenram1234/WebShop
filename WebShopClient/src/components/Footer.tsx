@@ -2,7 +2,6 @@ import { FunctionComponent, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAddressCard,
   faCircleInfo,
   faHeart,
   faShoppingCart,
@@ -11,7 +10,6 @@ import {
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-// import { GlobalProps } from "../App";
 import { GlobalProps } from "../context/GlobalContext";
 
 const Footer: FunctionComponent = () => {

@@ -55,7 +55,6 @@ const StoreProductsCards: FunctionComponent<StoreProductsCardsProps> = () => {
   const [filteredStocks, setFilteredStocks] = useState<Stock[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedLogos, setLoadedLogos] = useState<Set<string>>(new Set());
   const logoUrlCache = useRef<Record<string, LogoCache>>({});
   const placeholderUrl = "/placeholder.png";
 
@@ -77,9 +76,6 @@ const StoreProductsCards: FunctionComponent<StoreProductsCardsProps> = () => {
         lastAccessed: Date.now(),
       };
 
-      // Update loaded logos set
-      setLoadedLogos((prev) => new Set([...prev, fileName]));
-
       return url;
     } catch (error) {
       logoUrlCache.current[fileName] = {
@@ -100,11 +96,6 @@ const StoreProductsCards: FunctionComponent<StoreProductsCardsProps> = () => {
         if (now - cache.lastAccessed > maxAge && cache.url !== placeholderUrl) {
           URL.revokeObjectURL(cache.url);
           delete logoUrlCache.current[fileName];
-          setLoadedLogos((prev) => {
-            const newSet = new Set(prev);
-            newSet.delete(fileName);
-            return newSet;
-          });
         }
       });
     }, 60000); // Check every minute
