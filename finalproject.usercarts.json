@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "67f49296ce20442c78462a0a"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0a"
+  },
+  "quantity": 1,
+  "quotaHandled": true,
+  "createdAt": {
+    "$date": "2025-04-08T03:05:58.363Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:44:12.594Z"
+  },
+  "__v": 0,
+  "quotaRequestDate": {
+    "$date": "2025-04-08T09:17:50.987Z"
+  },
+  "requestedQuota": 1
+},
+{
+  "_id": {
+    "$oid": "67f49297ce20442c78462a0e"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0b"
+  },
+  "quantity": 1,
+  "quotaHandled": true,
+  "createdAt": {
+    "$date": "2025-04-08T03:05:59.751Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T03:06:17.671Z"
+  },
+  "__v": 0,
+  "quotaRequestDate": {
+    "$date": "2025-04-08T03:06:05.746Z"
+  },
+  "requestedQuota": 1
+},
+{
+  "_id": {
+    "$oid": "67f49298ce20442c78462a12"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0c"
+  },
+  "quantity": 1,
+  "quotaHandled": true,
+  "createdAt": {
+    "$date": "2025-04-08T03:06:00.607Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T03:11:03.784Z"
+  },
+  "__v": 0,
+  "quotaRequestDate": {
+    "$date": "2025-04-08T03:06:08.066Z"
+  },
+  "requestedQuota": 1
+},
+{
+  "_id": {
+    "$oid": "67f49299ce20442c78462a16"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0d"
+  },
+  "quantity": 1,
+  "quotaHandled": true,
+  "createdAt": {
+    "$date": "2025-04-08T03:06:01.014Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T03:06:22.084Z"
+  },
+  "__v": 0,
+  "quotaRequestDate": {
+    "$date": "2025-04-08T03:06:10.369Z"
+  },
+  "requestedQuota": 1
+},
+{
+  "_id": {
+    "$oid": "67f4ed665decc4938b31f8f0"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd10"
+  },
+  "quantity": 1,
+  "quotaHandled": true,
+  "createdAt": {
+    "$date": "2025-04-08T09:33:26.389Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:44:14.282Z"
+  },
+  "__v": 0,
+  "quotaRequestDate": {
+    "$date": "2025-04-08T09:44:04.564Z"
+  },
+  "requestedQuota": 1
+},
+{
+  "_id": {
+    "$oid": "67f4eff85decc4938b31f940"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd13"
+  },
+  "quantity": 1,
+  "quotaHandled": false,
+  "createdAt": {
+    "$date": "2025-04-08T09:44:24.078Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:44:24.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4eff95decc4938b31f944"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd15"
+  },
+  "quantity": 1,
+  "quotaHandled": false,
+  "createdAt": {
+    "$date": "2025-04-08T09:44:25.179Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:44:25.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4eff95decc4938b31f948"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd17"
+  },
+  "quantity": 1,
+  "quotaHandled": false,
+  "createdAt": {
+    "$date": "2025-04-08T09:44:25.899Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:44:25.900Z"
+  },
+  "__v": 0
+}]

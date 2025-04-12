@@ -1,0 +1,240 @@
+[{
+  "_id": {
+    "$oid": "67f3c99fbd9f484290730cb4"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a6"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0a"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T12:48:31.214Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3c9a0bd9f484290730cb8"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a6"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0c"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T12:48:32.167Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf243a22e9242ec28797"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64ddbd"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:04.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf263a22e9242ec2879f"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64df73"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:06.569Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf313a22e9242ec287a7"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64df7f"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:17.532Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf393a22e9242ec287ab"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64df80"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:25.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf433a22e9242ec287af"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64e006"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:35.795Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf4b3a22e9242ec287b7"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64e008"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:12:43.584Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3cf7a6c6c54212f506e97"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a0"
+  },
+  "stockId": {
+    "$oid": "67f3c9579d5b7fbcca64e00b"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T13:13:30.307Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4e3c85decc4938b31f891"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd0e"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T08:52:24.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff05decc4938b31f97e"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd17"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:20.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff15decc4938b31f982"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd18"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:21.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff15decc4938b31f986"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd19"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:21.398Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff15decc4938b31f98a"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd1a"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:21.999Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff25decc4938b31f98e"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd1b"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:22.477Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f52ff25decc4938b31f992"
+  },
+  "userId": {
+    "$oid": "67d7acd53e8c91a1d4ead9a3"
+  },
+  "stockId": {
+    "$oid": "67f3c9569d5b7fbcca64dd1c"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T14:17:22.932Z"
+  },
+  "__v": 0
+}]
