@@ -17,16 +17,21 @@ const SellToUs: FunctionComponent = () => {
       name: "",
       email: "",
       message: "",
+      phone: "",
     },
     validationSchema: yup.object({
       name: yup.string().required("Name is required"),
       email: yup.string().email("Invalid email").required("Email is required"),
       message: yup.string(),
+      phone: yup.string(),
     }),
     onSubmit: async (values) => {
       try {
-        const res = await submitCustomerRequest(values);
-        successMsg(res);
+        await submitCustomerRequest({
+          ...values,
+          phone: values.phone || "",
+        });
+        successMsg("Your request has been submitted successfully");
         formik.resetForm();
       } catch (error) {
         alert("There was an error submitting your request. Please try again.");
@@ -102,6 +107,20 @@ const SellToUs: FunctionComponent = () => {
                     fullWidth
                     error={formik.touched.email && Boolean(formik.errors.email)}
                     helperText={formik.touched.email && formik.errors.email}
+                    className="auth-input"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <TextField
+                    variant="outlined"
+                    label="Phone"
+                    type="text"
+                    name="phone"
+                    value={formik.values.phone}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    fullWidth
                     className="auth-input"
                   />
                 </div>

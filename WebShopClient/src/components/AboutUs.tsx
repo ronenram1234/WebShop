@@ -7,8 +7,6 @@ import {
   faLeaf,
   faShieldAlt,
   faLightbulb,
-  faPhone,
-  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ParallaxItem = ({ children }: { children: React.ReactNode }) => {
@@ -57,8 +55,8 @@ const AboutUs: FunctionComponent = () => {
             <p className="mission-statement">
               TinkerTech strives to be the IT management support system that
               customers can depend on, using our data security, environmental,
-              health, and safety principles as the core foundation for everything
-              we do.
+              health, and safety principles as the core foundation for
+              everything we do.
             </p>
           </ParallaxItem>
         </div>
@@ -69,15 +67,17 @@ const AboutUs: FunctionComponent = () => {
         <div className="container">
           <h2>Our Core Values</h2>
           <div className="values-grid">
-            {[faShieldAlt, faLeaf, faHandshake, faLightbulb].map((icon, idx) => (
-              <ParallaxItem key={idx}>
-                <div className="value-card">
-                  <FontAwesomeIcon icon={icon} className="value-icon" />
-                  <h3>Value {idx + 1}</h3>
-                  <p>Description of core value {idx + 1}.</p>
-                </div>
-              </ParallaxItem>
-            ))}
+            {[faShieldAlt, faLeaf, faHandshake, faLightbulb].map(
+              (icon, idx) => (
+                <ParallaxItem key={idx}>
+                  <div className="value-card">
+                    <FontAwesomeIcon icon={icon} className="value-icon" />
+                    <h3>Value {idx + 1}</h3>
+                    <p>Description of core value {idx + 1}.</p>
+                  </div>
+                </ParallaxItem>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -87,7 +87,14 @@ const AboutUs: FunctionComponent = () => {
         <div className="container">
           <h2>Quality, Environmental, Health and Safety Policy</h2>
           <div className="policy-grid">
-            {["Environment", "Improvement", "Biodiversity", "Health & Safety", "Participation", "Standards"].map((title, idx) => (
+            {[
+              "Environment",
+              "Improvement",
+              "Biodiversity",
+              "Health & Safety",
+              "Participation",
+              "Standards",
+            ].map((title, idx) => (
               <ParallaxItem key={idx}>
                 <div className="policy-item">
                   <h3>{title}</h3>

@@ -1,11 +1,4 @@
-import {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useState,
-  ReactElement,
-} from "react";
-import { GlobalProps } from "../context/GlobalContext";
+import { FunctionComponent, useEffect, useState, ReactElement } from "react";
 import { errorMsg, successMsg } from "../services/feedbackService";
 import ClipLoader from "react-spinners/ClipLoader";
 import {
@@ -15,7 +8,6 @@ import {
   GridRowModel,
 } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import DownloadIcon from "@mui/icons-material/Download";
 import * as XLSX from "xlsx";
@@ -84,7 +76,7 @@ const AdminCustomerRequests: FunctionComponent<
   ): Promise<GridRowModel> => {
     try {
       // TODO: Implement API call to update customer request status
-      // await updateCustomerRequest(newRow);
+      // For now, just return the new row
       successMsg("Request updated successfully");
       return newRow;
     } catch (error) {
@@ -132,7 +124,7 @@ const AdminCustomerRequests: FunctionComponent<
               Toolbar: GridToolbar,
             }}
             processRowUpdate={handleRowUpdate}
-            onProcessRowUpdateError={(error) => {
+            onProcessRowUpdateError={() => {
               errorMsg("Failed to update request");
             }}
           />

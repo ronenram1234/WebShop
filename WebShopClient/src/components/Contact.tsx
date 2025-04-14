@@ -8,24 +8,27 @@ import { successMsg } from "../services/feedbackService";
 interface Props {}
 
 const Contact: FunctionComponent<Props> = () => {
-
   // console.log("sell to us");
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       message: "",
+      phone: "",
     },
     validationSchema: yup.object({
       name: yup.string().required("Name is required"),
       email: yup.string().email("Invalid email").required("Email is required"),
       message: yup.string(),
+      phone: yup.string(),
     }),
     onSubmit: async (values) => {
       try {
-        const res=await submitCustomerRequest(values);
-        // alert(res);
-        successMsg(res)
+        await submitCustomerRequest({
+          ...values,
+          phone: values.phone || "",
+        });
+        successMsg("Your message has been sent successfully");
         formik.resetForm();
       } catch (error) {
         alert("There was an error submitting your request. Please try again.");
@@ -35,8 +38,6 @@ const Contact: FunctionComponent<Props> = () => {
 
   return (
     <div className="container py-4">
-
-
       <div className="border border-primary p-4">
         <form onSubmit={formik.handleSubmit}>
           <div className="mb-3">
@@ -74,6 +75,19 @@ const Contact: FunctionComponent<Props> = () => {
           <div className="mb-3">
             <TextField
               variant="outlined"
+              label="Phone"
+              type="text"
+              name="phone"
+              value={formik.values.phone}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              fullWidth
+            />
+          </div>
+
+          <div className="mb-3">
+            <TextField
+              variant="outlined"
               label="Message"
               type="text"
               name="message"
@@ -81,10 +95,8 @@ const Contact: FunctionComponent<Props> = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               fullWidth
-           
             />
           </div>
-     
 
           <button type="submit" className="btn btn-primary">
             Submit

@@ -16,13 +16,18 @@ const HomeCarousel: FunctionComponent = () => {
         indicators={false}
         prevIcon={null}
         nextIcon={null}
+        fade
       >
         {/* Slide 1 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home1.jpg"
-            alt="Slide 1"
+            src="/mov1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">FULLY TESTED</h2>
@@ -33,10 +38,13 @@ const HomeCarousel: FunctionComponent = () => {
 
         {/* Slide 2 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home2.jpg"
-            alt="Slide 2"
+            src="/mov2.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">EXCESS INVENTORY?</h2>
@@ -47,10 +55,13 @@ const HomeCarousel: FunctionComponent = () => {
 
         {/* Slide 3 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home3.jpg"
-            alt="Slide 3"
+            src="/mov3.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">LOOKING TO BUY?</h2>
@@ -61,10 +72,13 @@ const HomeCarousel: FunctionComponent = () => {
 
         {/* Slide 4 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home4.jpg"
-            alt="Slide 4"
+            src="/mov4.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">FULLY TESTED</h2>
@@ -75,10 +89,13 @@ const HomeCarousel: FunctionComponent = () => {
 
         {/* Slide 5 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home5.jpg"
-            alt="Slide 5"
+            src="/mov5.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">EXCESS INVENTORY?</h2>
@@ -89,10 +106,13 @@ const HomeCarousel: FunctionComponent = () => {
 
         {/* Slide 6 */}
         <Carousel.Item className="custom-caption">
-          <img
+          <video
             className="d-block w-100 block-home"
-            src="/home6.jpg"
-            alt="Slide 6"
+            src="/mov6.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
           <Carousel.Caption className="custom-caption">
             <h2 className="carousel-text">LOOKING TO BUY?</h2>
