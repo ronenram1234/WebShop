@@ -33,9 +33,12 @@ const AboutUs: FunctionComponent = () => {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-image">
-          <img
-            src="aboutus.jpg"
-            alt="TinkerTech Team"
+          <video
+            src="nature.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
